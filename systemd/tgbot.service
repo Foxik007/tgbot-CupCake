@@ -1,0 +1,15 @@
+[Unit]
+Description=Bot_Cupcake
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/environment
+ExecStart=/home/tgbot/venv/bin/python bot_start.py
+ExecReload=/home/tgbot/venv/bin/python bot_start.py
+WorkingDirectory=/home/tgbot/
+KillMode=process
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
